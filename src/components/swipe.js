@@ -52,7 +52,7 @@ const MySwiperComponent = ({ news }) => {
 
                     <div className=" sm:pl-9 pl-4  flex flex-col rounded-xl  ">
                         <img className='sm:pt-9 pt-4 ' src={neww.details.image} alt="Search Icon"></img>
-                        <h4 className={`sm:font-black min-h-200 font-bold text-white sm:text-lg text-xs sm:pt-7 pt-3 ${index === activeSlideIndex + 1 ? 'sm:block' : 'sm:hidden'
+                        <h4 className={`sm:font-black sm:min-h-200 font-bold text-white sm:text-lg text-xs sm:pt-7 pt-3 ${index === activeSlideIndex + 1 ? 'sm:block' : 'sm:hidden'
                             }  `}>{neww.title}</h4>
                         
                     </div>

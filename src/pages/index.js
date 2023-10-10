@@ -8,7 +8,7 @@ import Footer from '@/components/footer'
 import axios from "@/utils/axios";
 
 
-export default function Home({ data }) {
+export default function Home({ data,data2 }) {
   console.log(data)
   return (
     
@@ -20,7 +20,8 @@ export default function Home({ data }) {
       <NavBar></NavBar>
       <Banner></Banner>
       <Collection collections={data}></Collection>
-      <Footer></Footer>
+      <Footer social={data2.data.social_media}></Footer>
+
     </div>
   )
 }
@@ -37,5 +38,16 @@ export async function getServerSideProps({ locale }) {
       data = res.data;
     })
     .catch(console.error);
-  return { props: { data } };
+    let data2;
+    await axios
+        .get("/settings", {
+            headers: {
+                "Accept-Language": locale,
+            },
+        })
+        .then((res) => {
+            data2 = res.data;
+        })
+        .catch(console.error);
+    return { props: { data ,data2} };
 }

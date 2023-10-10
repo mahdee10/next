@@ -3,8 +3,9 @@ import NavBar from "@/components/nav";
 import MySwiperComponent from "@/components/swipe";
 import axios from "@/utils/axios";
 
-export default function News({ data }) {
+export default function News({ data ,data2}) {
     console.log(data.data.sections)
+    console.log(data2)
     const news = data.data.sections;
     return (
         <div>
@@ -22,7 +23,7 @@ export default function News({ data }) {
                     <MySwiperComponent news={news}></MySwiperComponent>
                 </div>
             </section>
-            <Footer></Footer>
+            <Footer social={data2.data.social_media}></Footer>
         </div>
     )
 }
@@ -40,5 +41,18 @@ export async function getServerSideProps({ locale }) {
             data = res.data;
         })
         .catch(console.error);
-    return { props: { data } };
+
+        let data2;
+    await axios
+        .get("/settings", {
+            headers: {
+                "Accept-Language": locale,
+            },
+        })
+        .then((res) => {
+            data2 = res.data;
+        })
+        .catch(console.error);
+    return { props: { data ,data2} };
 }
+
