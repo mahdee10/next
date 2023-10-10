@@ -10,7 +10,9 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>NextJs</title>
+        <meta name="description" content="Here you can find the latest news"/>
+        <meta name="author" content="Mahdi El Dirani"/>
+        <title>News</title>
       </Head>
       <main>
         <Component {...pageProps} />

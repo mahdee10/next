@@ -1,7 +1,8 @@
-import axios from "../utils/axios";
+
 import Image from "next/image";
 import l from "../../public/imgs/linked.png"
 import insta from "../../public/imgs/insta.png"
+import axios from "@/utils/axios"
 export default function Footer(props) {
     // console.log("footer",data)
     // console.log(data)
@@ -15,29 +16,29 @@ export default function Footer(props) {
                 <div className="flex justify-center sm:flex-row ">
 
                     <div className="flex flex-col">
-                        <h3 className="text-2xl">sitemap</h3>
-                        <a href="/">
-                            <p className="pt-5">about us</p>
+                        <h3 className="text-2xl text-center">sitemap</h3>
+                        <a href="/" className="pt-5 text-center">
+                            about us
                         </a>
-                        <a href="/">
-                            <p >our work</p>
+                        <a className="text-center" href="/">
+                            our work
                         </a>
-                        <a href="/">
-                            <p >our clients</p>
+                        <a  className="text-center" href="/">
+                           our clients
                         </a>
-                        <a href="/">
-                            <p >our team</p>
+                        <a className="text-center"  href="/">
+                            our team
                         </a>
-                        <a href="/">
-                            <p >contact us</p>
+                        <a className="text-center"  href="/">
+                            contact us
                         </a>
-                        <div className='flex  pt-4 rounded-xl sm:text-base text-xxxs sm:justify-start justify-center'>
+                        <div className='flex  pt-4 rounded-xl sm:text-base text-xxxs  justify-center'>
                             <a target="_blank" href={props.social.en.Instagram}>
-                                <Image className=' sm:mr-3 mr-1 sm:w-fit sm:h-fit w-8 h-8' src={l} alt="Search Icon"></Image>
+                                <Image className='sm:ml-5 sm:mr-3 mr-1 sm:w-fit sm:h-fit w-8 h-8' src={l} alt="Search Icon"></Image>
 
                             </a>
                             <a target="_blank" href={props.social.en.Linkedin}>
-                                <Image className=' sm:mr-3 mr-1 sm:w-fit sm:h-fit w-8 h-8' src={insta} alt="Search Icon"></Image>
+                                <Image className='  sm:mr-3 mr-1 sm:w-fit sm:h-fit w-8 h-8' src={insta} alt="Search Icon"></Image>
 
                             </a>
                         </div>
