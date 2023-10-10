@@ -50,7 +50,7 @@ export default function NavBar() {
                 </button>
                 <div className={`w-full md:w-auto ${isMenuOpen ? "block" : "hidden"}`} id="navbar-default">
                     <div className="sm:static absolute w-full bg-black z-50 nav flex flex-col md:flex-row  md:mt-0 md:border-0">
-                        <a href="./news" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/' ? 'active' : ''}`}>about us</a>
+                        <a href="./news" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/' ? 'active' : ''}`}>news</a>
                         <a href="/" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/job' ? 'active' : ''}`}>our work</a>
                         <a href="/" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${usePathname() === '/contact' ? 'active' : ''}`}>our clients</a>
                         

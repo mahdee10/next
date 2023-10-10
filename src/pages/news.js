@@ -13,7 +13,11 @@ export default function News({ data }) {
                 rel="stylesheet"
             />
             <NavBar></NavBar>
-            <section className="sm:px-24 px-5 sm:pt-5 sm:pb-10 pb-5  mx-auto 2xl:container  overflow-hidden">
+            <section className="sm:px-24 px-5 sm:pt-5  pb-2  mx-auto 2xl:container  overflow-hidden">
+                <h1 className="text-center sm:text-4xl text-xl font-black text-white">News</h1>
+            </section>
+            <section className="sm:px-24 px-5 sm:pt-5 sm:pb-10 pb-14  mx-auto 2xl:container  overflow-hidden">
+
                 <div className="">
                     <MySwiperComponent news={news}></MySwiperComponent>
                 </div>
