@@ -111,4 +111,31 @@
     }
   }
   
+  a {
+    position: relative;
+   
+  }
   
+  a::before {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background-color: #722d68;
+      bottom: 0;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: center; /* Start from the center */
+  }
+  
+  a::before {
+      left: 25%;
+  }
+  
+  a:hover::before{
+      transform: scaleX(1); /* Expand the lines */
+  }
+  .swiper-button-next,
+  .swiper-button-prev{
+    color: #081f55 !important;
+  }

@@ -19,6 +19,9 @@ module.exports = {
       width:{
         '800':"800px",
         'half':"48%"
+      },
+      minHeight:{
+      '200':"200px"
       }
     },
   },
