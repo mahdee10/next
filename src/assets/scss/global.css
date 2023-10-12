@@ -139,3 +139,33 @@
   .swiper-button-prev{
     color: #081f55 !important;
   }
+
+  .heading{
+    position: relative; /* Required for positioning the border */
+  }
+  
+  .heading::after {
+    content: ''; /* Create a pseudo-element for the border */
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    width: 90%; /* Set the border width to 75% */
+    height: 2px; /* Set the border height and style it accordingly */
+    background-color: #722d68; /* Border color */
+    display: block;
+  }
+
+  .headingActive{
+    position: relative; /* Required for positioning the border */
+  }
+  
+  .headingActive::after {
+    content: ''; /* Create a pseudo-element for the border */
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    width: 100%; /* Set the border width to 75% */
+    height: 2px; /* Set the border height and style it accordingly */
+    background-color: #722d68; /* Border color */
+    display: block;
+  }

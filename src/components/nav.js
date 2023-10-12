@@ -52,7 +52,7 @@ export default function NavBar() {
                     <div className="sm:static absolute w-full bg-black z-50 nav flex flex-col md:flex-row  md:mt-0 md:border-0">
                         <a href="./news" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/' ? 'active' : ''}`}>news</a>
                         <a href="/work" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/job' ? 'active' : ''}`}>our work</a>
-                        <a href="/" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${usePathname() === '/contact' ? 'active' : ''}`}>our clients</a>
+                        <a href="/clients" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${usePathname() === '/contact' ? 'active' : ''}`}>our clients</a>
                         
                     </div>
                 </div>
