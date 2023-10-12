@@ -30,6 +30,7 @@ const InfoSwiper = ({ information ,activeInfo}) => {
             modules={[Navigation]}
             spaceBetween={50}
             slidesPerView={1}
+            
             effect="coverflow"
             onSwiper={(swiper) => (swiperRef.current = swiper)}
 
@@ -51,7 +52,7 @@ const InfoSwiper = ({ information ,activeInfo}) => {
 
         >
             {information.map((info, index) => (
-                <SwiperSlide key={info.id}>
+                <SwiperSlide key={info.id} >
                     <div className=" sm:pl-9 pl-4  flex flex-col text-white">
                         <p>{info.text1}</p>
                         <p className='pt-5'>{info.text2}</p>
