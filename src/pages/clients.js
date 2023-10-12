@@ -52,14 +52,14 @@ export default function Clients({ data2 }) {
         },
     ]
     return (
-        <div>
+        <div className="">
             <link
           href="https://fonts.googleapis.com/css2?family=Geroma:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       <NavBar></NavBar>
         
-        <section className="sm:px-44 px-5 sm:pt-5  pb-2  pt-10 mx-auto 2xl:container  overflow-hidden">
+        <section className="sm:px-44 px-5 sm:pt-14 sm:pb-20  pb-2  pt-10 mx-auto 2xl:container  overflow-hidden">
             <div className="flex sm:flex-row flex-col">
                 <div className="text-white flex flex-col  sm:w-2/4 justify-between sm:pl-0 pl-5">
                     {information.map((info) => (

@@ -140,6 +140,9 @@
     color: #081f55 !important;
   }
 
+  @media screen and (min-width:650px) {
+    
+  
   .heading{
     position: relative; /* Required for positioning the border */
   }
@@ -169,3 +172,4 @@
     background-color: #722d68; /* Border color */
     display: block;
   }
+}
