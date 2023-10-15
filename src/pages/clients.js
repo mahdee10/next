@@ -3,7 +3,7 @@ import axios from "@/utils/axios";
 import Image from "next/image";
 import InfoSwiper from "@/components/infoSwipe";
 import NavBar from "@/components/nav";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import r from "../../public/imgs/r.png"
 import l from "../../public/imgs/l.png"
 import m1 from "../../public/imgs/m1.jpg"
@@ -18,88 +18,104 @@ import m9 from "../../public/imgs/m9.jpg"
 import m10 from "../../public/imgs/m10.jpg"
 import m11 from "../../public/imgs/m11.jpg"
 import m12 from "../../public/imgs/m12.jpg"
+import sort from "../../public/imgs/sort.png"
 import Footer from "@/components/footer";
 import Movies from "@/components/movies";
 export default function Clients({ data2 }) {
     const [activeInfo, setActive] = useState(0);
+    const [sortedTextVisible, setSortedTextVisible] = useState(false);
     const [originalMovies, setOriginalMovies] = useState([
         {
             image: m1,
             title: "This Much I Know to Be True",
             category: "Horror",
-            duration: "running time: 1h 45m"
+            duration: "running time: 1h 45m",
+            rate: 8
         },
         {
             image: m2,
             title: "Paris, 13th District",
             category: "Drama",
-            duration: "running time: 1h 45m"
+            duration: "running time: 1h 45m",
+            rate: 9
+
         },
         {
             image: m3,
             title: "Memory",
             category: "Action",
-            duration: "running time: 1h 54m"
+            duration: "running time: 1h 54m",
+            rate: 8.2
         },
         {
             image: m4,
             title: "Top Gun: Maverick",
             category: "Action",
-            duration: "running time: 2h 11m"
+            duration: "running time: 2h 11m",
+            rate: 9.2
         },
         {
             image: m5,
             title: "The Bad Guys",
             category: "Comedy",
-            duration: "running time: 1h 40m"
+            duration: "running time: 1h 40m",
+            rate: 7.3
         },
         {
             image: m6,
             title: "Operation Mincemeat",
             category: "Drama",
-            duration: "running time: 2h 8m"
+            duration: "running time: 2h 8m",
+            rate: 9.2
         },
         {
             image: m9,
             title: "The Black Phone",
             category: "Horror",
-            duration: "running time: 1h 42m"
+            duration: "running time: 1h 42m",
+            rate: 8.8
         },
         {
             image: m7,
             title: "Downtown Abbey",
             category: "Drama",
-            duration: "running time: 1h 50m"
+            duration: "running time: 1h 50m",
+            rate: 7.5
+
         },
         {
             image: m8,
             title: "Men",
             category: "Horror",
-            duration: "running time: 1h 57m"
+            duration: "running time: 1h 57m",
+            rate: 9.5
         },
 
         {
             image: m10,
             title: "Little Allan: The Human Antenna",
             category: "Family",
-            duration: "running time: 1h 15m"
+            duration: "running time: 1h 15m",
+            rate: 8.1
         },
         {
             image: m11,
             title: "Where the Crawdads Singe",
             category: "Drama",
-            duration: "running time: 1h 50m"
+            duration: "running time: 1h 50m",
+            rate: 9
         },
 
         {
             image: m12,
             title: "The Snow Queen",
             category: "Family",
-            duration: "running time: 1h 20m"
+            duration: "running time: 1h 20m",
+            rate: 7.5
         },
 
     ]);
-    
+
     const [movies, setMovies] = useState(originalMovies);
 
     function changeActive(id) {
@@ -107,20 +123,32 @@ export default function Clients({ data2 }) {
         setActive(id)
     }
 
-    
-    
-      const filterMovies = (category) => {
+
+
+    const filterMovies = (category) => {
         if (category === '') {
-          setMovies(originalMovies);
+            setMovies(originalMovies);
         } else {
-          const formattedCategory =
-            category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
-          const filteredMovies = originalMovies.filter(
-            (movie) => movie.category === formattedCategory
-          );
-          setMovies(filteredMovies);
+            const formattedCategory =
+                category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+            const filteredMovies = originalMovies.filter(
+                (movie) => movie.category === formattedCategory
+            );
+            setMovies(filteredMovies);
         }
-      };
+    };
+
+    const sortMovies = () => {
+        const sortedMovies = [...movies];
+        sortedMovies.sort((a, b) => b.rate - a.rate);
+        setMovies(sortedMovies);
+        setSortedTextVisible(true);
+
+        setTimeout(() => {
+            setSortedTextVisible(false);
+        }, 1000);
+    };
+
     function right() {
         if (activeInfo < 3) {
             setActive(activeInfo + 1)
@@ -192,19 +220,26 @@ export default function Clients({ data2 }) {
             <h1 className="text-white font-cold sm:text-4xl text-2xl text-center sm:pb-10">Movies</h1>
 
             <section className="sm:px-24 mx-auto 2xl:container">
-                <div className="sm:pl-0 sm:pt-0 pl-4  pt-4">
-                    <label className="sm:pl-0 pl-4 text-white mr-2"  for="mySelect">Select an option:</label>
-                    <select id="mySelect" name="mySelect" onChange={(e) => filterMovies(e.target.value)}>
-                        <option value="" disabled selected>Select a category</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Action">Action</option>
-                        <option value="Family">Family</option>
-                    </select>
+                <div className="flex items-center sm:pt-0 pt-4 ">
+                    <div className="sm:pl-0  pl-4">
+                        <label className="sm:pl-0 pl-4 text-white mr-2" for="mySelect">Select an option:</label>
+                        <select id="mySelect" name="mySelect" onChange={(e) => filterMovies(e.target.value)}>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Action">Action</option>
+                            <option value="Family">Family</option>
+                        </select>
+                    </div>
+                    <Image onClick={() => { sortMovies() }} className='cursor-pointer sm:ml-6 ml-3  sm:w-8 sm:h-8 w-6 h-6' src={sort} alt="Search Icon"></Image>
+                    {sortedTextVisible && (
+                        <div className="text-white ml-2">Sorted by rate</div>
+                    )}
                 </div>
+
                 <div className="image-container flex  justify-center flex-row  flex-wrap  pt-10">
                     {movies.map((movie) => (
-                        <Movies movie={movie.title} title={movie.title} duration={movie.duration} path={movie.image} category={movie.category} />
+                        <Movies movie={movie.title} rate={movie.rate} title={movie.title} duration={movie.duration} path={movie.image} category={movie.category} />
                     ))}
                 </div>
 
