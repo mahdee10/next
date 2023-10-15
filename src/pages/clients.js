@@ -220,7 +220,8 @@ export default function Clients({ data2 }) {
             <h1 className="text-white font-cold sm:text-4xl text-2xl text-center sm:pb-10">Movies</h1>
 
             <section className="sm:px-24 mx-auto 2xl:container">
-                <div className="flex items-center sm:pt-0 pt-4 flex-wrap justify-center">
+                <div className="sm:ml-20 flex items-center sm:pt-0 pt-4 flex-wrap sm:justify-start justify-center" >
+
                     <div className="sm:pl-0  pl-4">
                         <label className="sm:pl-0 pl-4 text-white mr-2" for="mySelect">Select an option:</label>
                         <select id="mySelect" name="mySelect" onChange={(e) => filterMovies(e.target.value)}>
