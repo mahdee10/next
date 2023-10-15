@@ -220,7 +220,7 @@ export default function Clients({ data2 }) {
             <h1 className="text-white font-cold sm:text-4xl text-2xl text-center sm:pb-10">Movies</h1>
 
             <section className="sm:px-24 mx-auto 2xl:container">
-                <div className="flex items-center sm:pt-0 pt-4 ">
+                <div className="flex items-center sm:pt-0 pt-4 flex-wrap ">
                     <div className="sm:pl-0  pl-4">
                         <label className="sm:pl-0 pl-4 text-white mr-2" for="mySelect">Select an option:</label>
                         <select id="mySelect" name="mySelect" onChange={(e) => filterMovies(e.target.value)}>
@@ -233,7 +233,7 @@ export default function Clients({ data2 }) {
                     </div>
                     <Image onClick={() => { sortMovies() }} className='cursor-pointer sm:ml-6 ml-3  sm:w-8 sm:h-8 w-6 h-6' src={sort} alt="Search Icon"></Image>
                     {sortedTextVisible && (
-                        <div className="text-white ml-2 sm:block hidden">Sorted by rate</div>
+                        <div className="text-white ml-2 ">Sorted by rate</div>
                     )}
                 </div>
 
