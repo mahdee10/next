@@ -233,7 +233,7 @@ export default function Clients({ data2 }) {
                     </div>
                     <Image onClick={() => { sortMovies() }} className='cursor-pointer sm:ml-6 ml-3  sm:w-8 sm:h-8 w-6 h-6' src={sort} alt="Search Icon"></Image>
                     {sortedTextVisible && (
-                        <div className="text-white ml-2">Sorted by rate</div>
+                        <div className="text-white ml-2 sm:block hidden">Sorted by rate</div>
                     )}
                 </div>
 
