@@ -17,20 +17,14 @@ export default function Footer(props) {
 
                     <div className="flex flex-col">
                         <h3 className="text-2xl text-center">sitemap</h3>
-                        <a href="/" className="pt-5 text-center">
-                            about us
+                        <a href="/news" className="pt-5 text-center">
+                            news
                         </a>
-                        <a className="text-center" href="/">
+                        <a className="text-center" href="/work">
                             our work
                         </a>
-                        <a  className="text-center" href="/">
-                           our clients
-                        </a>
-                        <a className="text-center"  href="/">
-                            our team
-                        </a>
-                        <a className="text-center"  href="/">
-                            contact us
+                        <a className="text-center" href="/clients">
+                            our clients
                         </a>
                         <div className='flex  pt-4 rounded-xl sm:text-base text-xxxs  justify-center'>
                             <a target="_blank" href={props.social.en.Instagram}>

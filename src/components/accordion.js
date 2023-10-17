@@ -22,7 +22,7 @@ export function AccordionCustomAnimation() {
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader
                     onClick={() => handleOpen(1)}
-                    className={`border-b-0 transition-colors ${open === 1 ? "text-blue-500 hover:!text-blue-700" : ""
+                    className={`border-b-0 transition-colors sm:text-2xl text-lg ${open === 1 ? "text-blue-500 hover:!text-blue-700" : ""
                         }`}
                 >
                     Terms and Conditions
@@ -38,10 +38,10 @@ export function AccordionCustomAnimation() {
             <Accordion open={open === 2} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader
                     onClick={() => handleOpen(2)}
-                    className={`border-b-0 transition-colors ${open === 2 ? "text-blue-500 hover:!text-blue-700" : ""
+                    className={`border-b-0 transition-colors sm:text-2xl text-start text-lg ${open === 2 ? "text-blue-500 hover:!text-blue-700" : ""
                         }`}
                 >
-                    Common Issues and Troubleshooting
+                    Common Issues & Troubleshoot
                 </AccordionHeader>
                 <AccordionBody>
                     We understand that technical hiccups can sometimes occur.
@@ -53,7 +53,7 @@ export function AccordionCustomAnimation() {
             <Accordion open={open === 3} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader
                     onClick={() => handleOpen(3)}
-                    className={`border-b-0 transition-colors ${open === 3 ? "text-blue-500 hover:!text-blue-700" : ""
+                    className={`border-b-0 transition-colors sm:text-2xl text-lg ${open === 3 ? "text-blue-500 hover:!text-blue-700" : ""
                         }`}
                 >
                     Privacy and Security
