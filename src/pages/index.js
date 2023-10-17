@@ -7,7 +7,6 @@ import Collection from '@/components/collection'
 import Footer from '@/components/footer'
 import axios from "@/utils/axios";
 
-
 export default function Home({ data,data2 }) {
   console.log(data)
   return (
