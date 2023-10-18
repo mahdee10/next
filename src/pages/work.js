@@ -43,7 +43,7 @@ export default function Work({ data2 }) {
                 <h1 className="text-center sm:text-4xl text-xl font-black text-white">Our Offers</h1>
             </section>
             <section className="sm:px-24 px-5 sm:pt-5 sm:pb-10 pb-14  mx-auto 2xl:container  overflow-hidden">
-                <div className="flex  flex-col pt-10">
+                <div className="flex  flex-col  pt-10">
                     {works.map((work) => (
                         <Wbanner key={work.title} title={work.title} text={work.text} path={work.path} td={work.td} id={work.id}/>
                     ))}
