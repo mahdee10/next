@@ -23,11 +23,13 @@ export default function Detail({ data, data2 }) {
                 <h2 className='sm:text-center sm:font-black font-bold text-722d68 sm:text-2xl text-base sm:pt-7 pt-3'>{selectedItem.title}</h2>
 
                 <div className='flex sm:flex-row flex-col justify-around sm:pt-20 pt-3 sm:pb-9 pb-4'>
-                    <div className=' sm:w-1/2 sm:pt-3'>
-                        <p className='sm:text-lg text-base text-white  text-8a8a8a'>
-                            {selectedItem.text}
-                        </p>
-                    </div>
+                    {selectedItem.text && (
+                        <div className='sm:w-1/2 sm:pt-3'>
+                            <p className='sm:text-lg text-base text-white  text-8a8a8a'>
+                                {selectedItem.text}
+                            </p>
+                        </div>
+                    )}
 
                     <div className=' sm:text-lg text-text-base sm:pt-0 pt-10'>
                         <p className='sm:border-b sm:border-722d68'>CLIENT: {selectedItem.client}</p>
