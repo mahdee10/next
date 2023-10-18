@@ -20,7 +20,7 @@ export default function Detail({ data, data2 }) {
                 <div className=' flex justify-center '>
                     <img className='sm:pt-9 pt-4 sm:w-1/2' src={selectedItem.image} alt="Search Icon"></img>
                 </div>
-                <h2 className='text-center sm:font-black font-bold text-722d68 sm:text-2xl text-base sm:pt-7 pt-3'>{selectedItem.title}</h2>
+                <h2 className='sm:text-center sm:font-black font-bold text-722d68 sm:text-2xl text-base sm:pt-7 pt-3'>{selectedItem.title}</h2>
 
                 <div className='flex sm:flex-row flex-col justify-around sm:pt-20 pt-3 sm:pb-9 pb-4'>
                     <div className=' sm:w-1/2 sm:pt-3'>
