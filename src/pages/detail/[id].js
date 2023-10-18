@@ -4,7 +4,7 @@ import axios from "@/utils/axios";
 import NavBar from '@/components/nav'
 export default function Detail({ data, data2 }) {
     const router = useRouter()
-    console.log(router.query.id)
+    console.log(router.query)
     const selectedItem = data.data.find(item => item.id === parseInt(router.query.id, 10));
     console.log(selectedItem)
 
