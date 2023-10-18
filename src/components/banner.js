@@ -25,21 +25,21 @@ export default function Banner() {
       duration: 1,
       scrollTrigger: {
         trigger: main.current,
-        start: 'top center', // Adjust this as needed
-        end: 'bottom center', // Adjust this as needed
+        start: 'top center', 
+        end: 'bottom center', 
         scrub: true,
       },
     });
 
     gsap.fromTo(h2, {
-      fontSize: '2rem', // Start with a smaller font size
+      fontSize: '2rem', 
     }, {
-      fontSize: '6rem', // End with a larger font size
+      fontSize: '6rem',
       duration: 1,
       scrollTrigger: {
         trigger: main.current,
-        start: 'top center', // Adjust this as needed
-        end: 'bottom center', // Adjust this as needed
+        start: 'top center', 
+        end: 'bottom center', 
         scrub: true,
       },
     });

@@ -44,6 +44,8 @@ export default function Collection(props){
             desc:"KitKat Halloween full packaging driven campaign"
         },
     ]
+
+    
     return(
         <section className="sm:px-24 mx-auto 2xl:container">
             <div className="image-container flex  justify-between flex-row  flex-wrap  pt-10">
