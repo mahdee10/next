@@ -12,12 +12,12 @@ export default function Wbanner(props) {
   
       ScrollTrigger.create({
         trigger: divRef.current,
-        start: 'top 80%', // Adjust the start point based on your needs
-        end: 'top 20%', // Adjust the end point based on your needs
+        start: 'top 80%', 
+        end: 'top 20%', 
         animation: gsap.to(divRef.current, {
           x: 0,
-          duration: 1, // Animation duration
-          ease: 'power2.out', // Easing function
+          duration: 1, 
+          ease: 'power2.out', 
         }),
         toggleActions: 'play none none none',
       });
