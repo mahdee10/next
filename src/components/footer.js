@@ -4,12 +4,7 @@ import l from "../../public/imgs/linked.png"
 import insta from "../../public/imgs/insta.png"
 import axios from "@/utils/axios"
 export default function Footer(props) {
-    // console.log("footer",data)
-    // console.log(data)
-
-    // console.log("footer",data)
-    console.log(props)
-    console.log(props.social.en.Linkedin)
+   
     return (
         <div className="bg-fe424c">
             <div className="sm:px-24 text-white px-5 sm:pt-8 sm:pb-12 mx-auto 2xl:container pb-10 overflow-hidden sm:pt-20 pt-10 ">
@@ -25,6 +20,9 @@ export default function Footer(props) {
                         </a>
                         <a className="text-center" href="/clients">
                             our clients
+                        </a>
+                        <a className="text-center" href="/team">
+                            our team
                         </a>
                         <div className='flex  pt-4 rounded-xl sm:text-base text-xxxs  justify-center'>
                             <a target="_blank" href={props.social.en.Instagram}>

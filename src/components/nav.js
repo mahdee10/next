@@ -53,6 +53,7 @@ export default function NavBar() {
                         <a href="./news" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/' ? 'active' : ''}`}>news</a>
                         <a href="/work" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/job' ? 'active' : ''}`}>our work</a>
                         <a href="/clients" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${usePathname() === '/contact' ? 'active' : ''}`}>our clients</a>
+                        <a href="/team" className={`block text-center text-lg no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${usePathname() === '/contact' ? 'active' : ''}`}>our team</a>
                         
                     </div>
                 </div>
