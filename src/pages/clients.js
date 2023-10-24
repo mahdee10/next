@@ -45,9 +45,7 @@ export default function Clients({ data2 }) {
     }, []);
 
     useEffect(() => {
-        const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches; 
 
-        if (isLargeScreen) {
             const image = document.querySelector('.image-container img');
             const textDiv = document.querySelector('.text-div');
             const textDiv2 = document.querySelector('.text-div2');
@@ -66,7 +64,7 @@ export default function Clients({ data2 }) {
                 gsap.to(textDiv2, { y: 30, opacity: 0, duration: 0.5 });
                 cursorRef.current.style.transform = 'scale(0)';
             });
-        }
+        
     }, []);
     const [activeInfo, setActive] = useState(0);
     const [sortedTextVisible, setSortedTextVisible] = useState(false);
