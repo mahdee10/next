@@ -178,3 +178,12 @@
   opacity: 0;
   transition: opacity 1s ease; /* You can adjust the duration as needed */
 }
+
+.image-container img {
+  filter: grayscale(100%);
+  transition: filter 2s;
+}
+
+.image-container img:hover {
+  filter: grayscale(0%);
+}

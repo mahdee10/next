@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import r from "../../public/imgs/r.png"
 import l from "../../public/imgs/l.png"
 import m1 from "../../public/imgs/m1.jpg"
+import dubia from "../../public/imgs/dubai.jpg"
 import m2 from "../../public/imgs/m2.jpg"
 import m3 from "../../public/imgs/m3.jpg"
 import m4 from "../../public/imgs/m4.jpg"
@@ -22,7 +23,39 @@ import sort from "../../public/imgs/sort.png"
 import Footer from "@/components/footer";
 import Movies from "@/components/movies";
 import { AccordionCustomAnimation } from "@/components/accordion";
+import { gsap } from 'gsap';
 export default function Clients({ data2 }) {
+    useEffect(() => {
+        const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches; // Adjust the min-width as needed
+    
+        if (isLargeScreen) {
+          const image = document.querySelector('.image-container img');
+          const textDiv = document.querySelector('.text-div');
+          const textDiv2 = document.querySelector('.text-div2');
+    
+          // Initial state
+          gsap.set(textDiv, { y: 0, opacity: 1 });
+    
+          image.addEventListener('mouseenter', () => {
+            gsap.to(textDiv, { y: 50, opacity: 0, duration: 0.5 });
+          });
+    
+          image.addEventListener('mouseleave', () => {
+            gsap.to(textDiv, { y: 0, opacity: 1, duration: 0.5 });
+          });
+    
+          // Initial state
+          gsap.set(textDiv2, { y: 30, opacity: 0 });
+    
+          image.addEventListener('mouseenter', () => {
+            gsap.to(textDiv2, { y: 0, opacity: 1, duration: 0.5 });
+          });
+    
+          image.addEventListener('mouseleave', () => {
+            gsap.to(textDiv2, { y: 30, opacity: 0, duration: 0.5 });
+          });
+        }
+      }, []);
     const [activeInfo, setActive] = useState(0);
     const [sortedTextVisible, setSortedTextVisible] = useState(false);
     const [originalMovies, setOriginalMovies] = useState([
@@ -217,6 +250,26 @@ export default function Clients({ data2 }) {
 
 
             </section>
+            <h1 className="text-white font-cold sm:text-4xl text-2xl text-center sm:pb-10">Location</h1>
+            <section className="sm:px-24 mx-auto 2xl:container sm:pb-20">
+                <div className="relative flex sm:flex-row flex-col">
+                    <div className="image-container">
+                        <Image className="img" src={dubia} alt="dubia"></Image>
+                    </div>
+                    <div className={`text-div text-white sm:absolute sm:w-30% sm:top-1/4 z-10 flex flex-col justify-items-center   left-3/4`}>
+                        <h1 className=" sm:text-3xl text-xl font-black ">yes its a melting pot </h1>
+                        <h1 className=" sm:text-3xl text-xl font-black ">no we are not looking to blend in </h1>
+                        <h1 className=" sm:text-3xl text-xl font-black ">let's connect so we stand out together </h1>
+                    </div>
+                    <div className={`text-div2 sm:block hidden text-white sm:absolute sm:w-30% sm:top-3/4 z-10 flex flex-col justify-items-center   left-3/4`}>
+                        <h1 className=" sm:text-6xl text-xl font-black pb-4">Dubia </h1>
+                        <h1 className=" sm:text-3xl text-xl font-black ">+4542365344</h1>
+                        <h1 className=" sm:text-3xl text-xl font-black ">Email:email@gmail.com </h1>
+                    </div>
+                </div>
+            </section>
+
+
 
             <h1 className="text-white font-cold sm:text-4xl text-2xl text-center sm:pb-10">Movies</h1>
 

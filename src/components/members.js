@@ -40,6 +40,7 @@ export default function Members(props) {
                     <p>{props.role}</p>
                 </div>
             </div>
+            
         </div>
     )
 
