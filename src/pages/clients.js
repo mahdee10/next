@@ -3,7 +3,7 @@ import axios from "@/utils/axios";
 import Image from "next/image";
 import InfoSwiper from "@/components/infoSwipe";
 import NavBar from "@/components/nav";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import r from "../../public/imgs/r.png"
 import l from "../../public/imgs/l.png"
 import m1 from "../../public/imgs/m1.jpg"
@@ -25,37 +25,49 @@ import Movies from "@/components/movies";
 import { AccordionCustomAnimation } from "@/components/accordion";
 import { gsap } from 'gsap';
 export default function Clients({ data2 }) {
+    const cursorRef = useRef(null);
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+    const cursorOffsetX = 100;
+    const cursorOffsetY = 100;
+
+    const updateCursorPosition = (e) => {
+        const x = e.clientX - cursorOffsetX;
+        const y = e.clientY - cursorOffsetY;
+        setCursorPosition({ x, y });
+    };
+
     useEffect(() => {
-        const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches; // Adjust the min-width as needed
-    
+        window.addEventListener("mousemove", updateCursorPosition);
+        return () => {
+            window.removeEventListener("mousemove", updateCursorPosition);
+        };
+    }, []);
+
+    useEffect(() => {
+        const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches; 
+
         if (isLargeScreen) {
-          const image = document.querySelector('.image-container img');
-          const textDiv = document.querySelector('.text-div');
-          const textDiv2 = document.querySelector('.text-div2');
-    
-          // Initial state
-          gsap.set(textDiv, { y: 0, opacity: 1 });
-    
-          image.addEventListener('mouseenter', () => {
-            gsap.to(textDiv, { y: 50, opacity: 0, duration: 0.5 });
-          });
-    
-          image.addEventListener('mouseleave', () => {
-            gsap.to(textDiv, { y: 0, opacity: 1, duration: 0.5 });
-          });
-    
-          // Initial state
-          gsap.set(textDiv2, { y: 30, opacity: 0 });
-    
-          image.addEventListener('mouseenter', () => {
-            gsap.to(textDiv2, { y: 0, opacity: 1, duration: 0.5 });
-          });
-    
-          image.addEventListener('mouseleave', () => {
-            gsap.to(textDiv2, { y: 30, opacity: 0, duration: 0.5 });
-          });
+            const image = document.querySelector('.image-container img');
+            const textDiv = document.querySelector('.text-div');
+            const textDiv2 = document.querySelector('.text-div2');
+
+            gsap.set(textDiv, { y: 0, opacity: 1 });
+            gsap.set(textDiv2, { y: 30, opacity: 0 });
+
+            image.addEventListener('mouseenter', () => {
+                gsap.to(textDiv, { y: 50, opacity: 0, duration: 0.5 });
+                gsap.to(textDiv2, { y: 0, opacity: 1, duration: 0.5 });
+                cursorRef.current.style.transform = 'scale(1)';
+            });
+
+            image.addEventListener('mouseleave', () => {
+                gsap.to(textDiv, { y: 0, opacity: 1, duration: 0.5 });
+                gsap.to(textDiv2, { y: 30, opacity: 0, duration: 0.5 });
+                cursorRef.current.style.transform = 'scale(0)';
+            });
         }
-      }, []);
+    }, []);
     const [activeInfo, setActive] = useState(0);
     const [sortedTextVisible, setSortedTextVisible] = useState(false);
     const [originalMovies, setOriginalMovies] = useState([
@@ -266,6 +278,7 @@ export default function Clients({ data2 }) {
                         <h1 className=" sm:text-3xl text-xl font-black ">+4542365344</h1>
                         <h1 className=" sm:text-3xl text-xl font-black ">Email:email@gmail.com </h1>
                     </div>
+                    <div className="cursor-circle" style={{ left: `${cursorPosition.x}px`, top: `${cursorPosition.y}px` }} ref={cursorRef}></div>
                 </div>
             </section>
 

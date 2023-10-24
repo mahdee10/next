@@ -187,3 +187,17 @@
 .image-container img:hover {
   filter: grayscale(0%);
 }
+
+.cursor-circle {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: 3px solid #722d68;
+  border-color: #722d68 !important;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.2s;
+  mix-blend-mode: difference;
+}
