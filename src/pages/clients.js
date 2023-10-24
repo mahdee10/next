@@ -28,9 +28,9 @@ export default function Clients({ data2 }) {
     const cursorRef = useRef(null);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-    const cursorOffsetX = 100;
-    const cursorOffsetY = 100;
-
+    const cursorOffsetX = 140;
+    const cursorOffsetY = 150;
+    
     const updateCursorPosition = (e) => {
         const x = e.clientX - cursorOffsetX;
         const y = e.clientY - cursorOffsetY;
