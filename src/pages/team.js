@@ -51,7 +51,7 @@ export default function Work({ data2 }) {
             />
             <NavBar></NavBar>
             <section className="sm:px-24 px-5 sm:pt-5 sm:pb-10 pb-14  mx-auto 2xl:container  overflow-hidden">
-                <div className="flex  sm:justify-center sm:flex-row flex-col items-center  flex-wrap  pt-10 ">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-10 ">
                     {members.map((member) => (
                         <Members key={member.name} name={member.name} role={member.role}  path={member.path} />
                     ))}
