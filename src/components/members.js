@@ -31,8 +31,8 @@ export default function Members(props) {
     }, []);
 
     return (
-        <div className="sm:pl-9 pl-4 sm:pr-7 pr-4 flex sm:justify-start justify-center  rounded-xl sm:w-3/12 w-full sm:mb-0 mb-3 min-h-400">
-            <div className="relative text-white w-60 h-60 rounded-full border border-fe424c min">
+        <div className="sm:pl-9 pl-4 sm:pr-7 pr-4 flex sm:justify-start justify-center  rounded-xl md:w-1/3 sm:w-1/2 w-full sm:mb-0 mb-3 min-h-400 ">
+            <div className="relative text-white min-w-60 h-60 rounded-full border border-fe424c min ">
                 <Image ref={imageRef} className=' rounded-full w-52 h-52  absolute top-2/4 left-1/2 transform -translate-y-1/2 -translate-x-1/2' src={props.path} alt="Search Icon"></Image>
                 <div ref={lineRef} className="absolute top-full left-1/2 bg-black h-10 w-1 transform  -translate-x-1/2  bg-fe424c"></div>
                 <div ref={textRef} className="absolute top-full left-3/4 transform -translate-x-1/2 text-white pt-5">

@@ -30,7 +30,7 @@ export default function Clients({ data2 }) {
 
     const cursorOffsetX = 140;
     const cursorOffsetY = 150;
-    
+
     const updateCursorPosition = (e) => {
         const x = e.clientX - cursorOffsetX;
         const y = e.clientY - cursorOffsetY;
@@ -302,7 +302,7 @@ export default function Clients({ data2 }) {
                     )}
                 </div>
 
-                <div className="image-container flex  justify-center flex-row  flex-wrap  pt-10">
+                <div className=" flex  justify-center flex-row  flex-wrap  pt-10">
                     {movies.map((movie) => (
                         <Movies movie={movie.title} rate={movie.rate} title={movie.title} duration={movie.duration} path={movie.image} category={movie.category} />
                     ))}

@@ -91,13 +91,6 @@
   
   body {
     color: rgb(var(--foreground-rgb));
-
-    /* background: linear-gradient(
-        to bottom,
-        transparent,
-        rgb(var(--background-end-rgb))
-      ) 
-      rgb(var(--background-start-rgb));*/
   }
   
   a {
@@ -125,7 +118,7 @@
       bottom: 0;
       transform: scaleX(0);
       transition: transform 0.3s;
-      transform-origin: center; /* Start from the center */
+      transform-origin: center; 
   }
   
   a::before {
@@ -133,7 +126,7 @@
   }
   
   a:hover::before{
-      transform: scaleX(1); /* Expand the lines */
+      transform: scaleX(1); 
   }
   .swiper-button-next,
   .swiper-button-prev{
@@ -144,39 +137,39 @@
     
   
   .heading{
-    position: relative; /* Required for positioning the border */
+    position: relative; 
   }
   
   .heading::after {
-    content: ''; /* Create a pseudo-element for the border */
+    content: ''; 
     position: absolute;
     bottom: -10%;
     left: 0;
-    width: 90%; /* Set the border width to 75% */
-    height: 2px; /* Set the border height and style it accordingly */
-    background-color: #722d68; /* Border color */
+    width: 90%; 
+    height: 2px; 
+    background-color: #722d68;
     display: block;
   }
 
   .headingActive{
-    position: relative; /* Required for positioning the border */
+    position: relative; 
   }
   
   .headingActive::after {
-    content: ''; /* Create a pseudo-element for the border */
+    content: ''; 
     position: absolute;
     bottom: -10%;
     left: 0;
-    width: 100%; /* Set the border width to 75% */
-    height: 2px; /* Set the border height and style it accordingly */
-    background-color: #722d68; /* Border color */
+    width: 100%; 
+    height: 2px; 
+    background-color: #722d68; 
     display: block;
   }
 }
 
 .fade-out {
   opacity: 0;
-  transition: opacity 1s ease; /* You can adjust the duration as needed */
+  transition: opacity 1s ease; 
 }
 
 .image-container img {
@@ -199,5 +192,7 @@
     pointer-events: none;
     transform-origin: center;
     transform: scale(0);
-    transition: transform 0.5s ease; /* Add this line for the smooth transition */
+    transition: transform 0.5s ease; 
 }
+
+
