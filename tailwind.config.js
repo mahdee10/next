@@ -32,6 +32,9 @@ module.exports = {
       minWidth:{
         '60':"240px"
       },
+      screens:{
+        'xmd':"950px"
+      },
       height:{
         "o":"450px"
       }
