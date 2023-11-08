@@ -10,38 +10,50 @@ import Ads from "./ads"
 export default function Collection(props){
     const ads=[
         {
+            id:1,
             path:pepsi,
             title:"Fiz the World",
-            desc:"Pepsi's Expo 2022 compaign"
+            desc:"asd aasd asd asd a sd"
         },
         {
-            path:puck,
-            title:"A Display To Inspire The Every Day Chef",
-            desc:"We created our bespoke, modular displays can be arranged in countless configurations"
+            id:2,
+            path:pepsi,
+            title:"wqwdqwdqwd",
+            desc:"asdas asd as d asd as d as d asd asd configurations"
         },{
-            path:opt,
-            title:"The Optimum Nutrition For The Optimum Challenge",
-            desc:"In less than three weeks, we took the leading sports nutrition specialist Optimum Nutrition and got it in perfect shape"
+            id:3,
+
+            path:pepsi,
+            title:"Challenge",
+            desc:"In less tdfg dfvsf df dsf s ffs fsd "
         },{
-            path:nivea,
-            title:"Biodegradable Product in an Eco-friendly Space",
-            desc:"For Nivea’s new range of biodegradable wipes, we found the perfect balance between highlighting their green credentials without casting any doubt about their make-up removal efficacy."
+            id:4,
+
+            path:pepsi,
+            title:"ddfvdf",
+            desc:"For rdfgdf d df d df "
         },{
-            path:mouth,
-            title:"Even a Mouthwash Can Be A Superhero",
-            desc:"We designed a cardboard sleeve to turn the bottle into a playful superhero, making it appealing to kids aged 6 and over."
+            id:5,
+            path:pepsi,
+            title:"sddshgkjuilu",
+            desc:"theapp aged 6 and over wrfew we d"
         },{
-            path:chips,
-            title:"Taking Over the IMG World",
-            desc:"When Lay’s appeared in the Lost Valley dinosaur enclosure at Dubai’s biggest indoor theme park – IMG Worlds of Adventure –"
+            id:6,
+
+            path:pepsi,
+            title:"Taksdcs sd sd ",
+            desc:"Wadad dfs sdcsd sf fs efe fd "
         },{
-            path:champ,
-            title:"Longest Passes in History",
-            desc:"PepsiCo enters the Book of World Records"
+            id:7,
+
+            path:pepsi,
+            title:"Loy",
+            desc:"dfsdcsd"
         },{
-            path:kitkat,
-            title:"Trick or Treat",
-            desc:"KitKat Halloween full packaging driven campaign"
+            id:8,
+            path:pepsi,
+            title:"asdcas",
+            desc:"Ksdfsdfssdfsd df df dfdfdfsf  ewfwes 23 rw"
         },
     ]
 
@@ -49,8 +61,8 @@ export default function Collection(props){
     return(
         <section className="sm:px-24 mx-auto 2xl:container">
             <div className="flex  justify-between flex-row  flex-wrap  pt-10">
-                        {props.collections.data.map((ad) => (
-                            <Ads key={ad.id} id={ad.id} title={ad.title} desc={ad.text} path={ad.image} />
+                        {ads.map((ad) => (
+                            <Ads key={ad.id} id={ad.id} title={ad.title} desc={ad.desc} path={ad.path} />
                         ))}
                     </div>
         </section>

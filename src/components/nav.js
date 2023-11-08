@@ -34,7 +34,7 @@ export default function NavBar() {
     return (
         <header className="z-10  w-full ">
             <div className="max-w-screen-xl flex flex-wrap justify-between items-center text-ffffffb2 mx-auto sm:px-20 sm:py-14">
-            <a href="/" className={`block text-center text-2xl no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/' ? 'active' : ''}`}>CreoShift</a>
+            <a href="/" className={`block text-center text-2xl no-underline decoration-white sm:py-1 h-full leading-8 px-5 py-3.5 hover:bg-black ${pathname === '/' ? 'active' : ''}`}>Cinemax</a>
 
                 <button
                     type="button"
